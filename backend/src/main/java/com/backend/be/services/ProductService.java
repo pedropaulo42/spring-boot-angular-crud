@@ -1,6 +1,7 @@
 package com.backend.be.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.EntityNotFoundException;
 
@@ -22,6 +23,11 @@ public class ProductService {
 	
 	public List<Product> findAll() {
 		return repository.findAll();
+	}
+	
+	public Product findById(Long id) {
+		Optional<Product> product = repository.findById(id);
+		return product.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 	
 	public Product insert(Product product) {
