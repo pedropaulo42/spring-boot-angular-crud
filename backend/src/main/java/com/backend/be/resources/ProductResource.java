@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,16 +25,19 @@ public class ProductResource {
 	@Autowired
 	private ProductService service;
 	
+	@CrossOrigin
 	@GetMapping
 	public ResponseEntity<List<Product>> findAll() {
 		return ResponseEntity.ok().body(service.findAll());
 	}
 	
+	@CrossOrigin
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Product> findById(@PathVariable Long id) {
 		return ResponseEntity.ok().body(service.findById(id));
 	}
 	
+	@CrossOrigin
 	@PostMapping
 	public ResponseEntity<Product> insert(@RequestBody Product product) {
 		product = service.insert(product);
@@ -41,12 +45,14 @@ public class ProductResource {
 		return ResponseEntity.created(uri).body(product);
 	}
 	
+	@CrossOrigin
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<Product> delete(@PathVariable Long id) {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
 	
+	@CrossOrigin
 	@PostMapping(value = "/{id}")
 	public ResponseEntity<Product> update(@PathVariable Long id, @RequestBody Product product) {
 		return ResponseEntity.ok().body(service.update(id, product));
