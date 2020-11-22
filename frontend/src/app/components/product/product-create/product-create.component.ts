@@ -11,10 +11,10 @@ import { ProductService } from '../product.service';
 export class ProductCreateComponent implements OnInit {
 
   product: Product = {
-    name: "teste",
-    price: 123.123,
-    quantity: 1,
-    description: "testando"
+    name: "",
+    price: null,
+    quantity: null,
+    description: ""
   }
 
   constructor(

@@ -1,9 +1,28 @@
-<p>product-create works!</p>
+<mat-card>
+    <mat-card-title>New Product</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput required placeholder="Name" title="Campo vazio."
+            [(ngModel)]="product.name" name="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput required pattern="^[0-9.]+$" title="Apenas valores acima de 0." placeholder="Price (R$)" 
+            [(ngModel)]="product.price" name="price">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput required pattern="^[0-9]+$" title="Apenas valores inteiros acima de 0." placeholder="Quantity" 
+            [(ngModel)]="product.quantity" name="quantity">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Description" 
+            [(ngModel)]="product.description" name="description">
+        </mat-form-field>
+    </form>
 
-<button mat-raised-button (click)="createProduct()" color="primary">
-    Save
-</button>
-
-<button mat-raised-button (click)="cancel()">
-    Cancel
-</button>
+    <button mat-raised-button (click)="createProduct()" color="primary">
+        Save
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        Cancel
+    </button>
+</mat-card>
