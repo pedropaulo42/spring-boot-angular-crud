@@ -13,8 +13,7 @@ export class ProductCreateComponent implements OnInit {
   product: Product = {
     name: "",
     price: null,
-    quantity: null,
-    description: ""
+    quantity: null
   }
 
   constructor(

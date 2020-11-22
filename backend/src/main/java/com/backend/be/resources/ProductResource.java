@@ -30,7 +30,7 @@ public class ProductResource {
 	public ResponseEntity<List<Product>> findAll() {
 		return ResponseEntity.ok().body(service.findAll());
 	}
-	
+
 	@CrossOrigin
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Product> findById(@PathVariable Long id) {
@@ -44,7 +44,7 @@ public class ProductResource {
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(product.getId()).toUri();
 		return ResponseEntity.created(uri).body(product);
 	}
-	
+
 	@CrossOrigin
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<Product> delete(@PathVariable Long id) {

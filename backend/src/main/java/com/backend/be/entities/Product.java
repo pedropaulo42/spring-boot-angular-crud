@@ -20,18 +20,16 @@ public class Product implements Serializable {
 	private String name;
 	private Double price;
 	private Integer quantity;
-	private String description;
-	
+
 	public Product() {
 	}
 
-	public Product(Long id, String name, Double price, Integer quantity, String description) {
+	public Product(Long id, String name, Double price, Integer quantity) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.quantity = quantity;
-		this.description = description;
 	}
 
 	public Long getId() {
@@ -64,14 +62,6 @@ public class Product implements Serializable {
 
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 	
 	public Double getTotal() {

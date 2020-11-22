@@ -1,22 +1,22 @@
 <mat-card>
-    <mat-card-title>New Product</mat-card-title>
+    <mat-card-title>Delete Product</mat-card-title>
     <form>
         <mat-form-field>
             <input matInput required placeholder="Name" title="Campo vazio."
-            [(ngModel)]="product.name" name="name">
+            [value]="product.name" name="name" disabled>
         </mat-form-field>
         <mat-form-field>
             <input matInput required pattern="^[0-9.]+$" title="Apenas valores acima de 0." placeholder="Price (R$)" 
-            [(ngModel)]="product.price" name="price">
+            [value]="product.price" name="price" disabled>
         </mat-form-field>
         <mat-form-field>
             <input matInput required pattern="^[0-9]+$" title="Apenas valores inteiros acima de 0." placeholder="Quantity" 
-            [(ngModel)]="product.quantity" name="quantity">
+            [value]="product.quantity" name="quantity" disabled>
         </mat-form-field>
     </form>
 
-    <button mat-raised-button (click)="createProduct()" color="primary">
-        Save
+    <button mat-raised-button (click)="deleteProduct()" color="warn">
+        Delete
     </button>
     <button mat-raised-button (click)="cancel()">
         Cancel

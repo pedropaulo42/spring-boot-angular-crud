@@ -58,6 +58,5 @@ public class ProductService {
 		entity.setName(product.getName());
 		entity.setPrice(product.getPrice());
 		entity.setQuantity(product.getQuantity());
-		entity.setDescription(product.getDescription());
 	}
 }
